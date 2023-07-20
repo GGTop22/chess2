@@ -21,34 +21,15 @@ def isRookJump(p1: (int, int), p2: (int, int)) -> bool:
     return (p1[0] == p2[0]) or (p1[1] == p2[1])
 
 
-def countMovesKnight(p1):
-    move = [2, 1], [2, -1], [1, 2], [-1, 2], [-2, -1], [1, -2], [-1, -2]
-
-    # verhnee pravo /2 vverh,1 vpravo
-    # verhnee levo /2 vverh,-1 vpravo
-    # praviy verh /1 vverh,2 vpravo
-    # praviy niz/-1 vverh,2 vpravo
-    # niznie levo/-2 vverh,-1 vpravo
-    # niznie pravo/-2 vverh,1 vpravo
-    # leviy verh/1 vverh,-2 vpravo
-    # leviy niz/-1 vverh,-2 vpravo
-
-
-def countMovesQueen(p1):
-    move = [1], [-1], [2], [-2], [3], [-3], [4], [-4], [5], [-5], [6], [-6], [7], [-7], [8], [-8]
-
-
-def countMovesRook(p1):
-    move = [1], [-1], [2], [-2], [3], [-3], [4], [-4], [5], [-5], [6], [-6], [7], [-7], [8], [-8]
 
 
 with open('INPUT.TXT', 'r') as input:
     s1, s2, s3 = input.readline().strip().split()
-print(s1, s2, s3)
+#print(s1, s2, s3)
 point1 = symbolsToIntCoord(s1)
 point2 = symbolsToIntCoord(s2)
 point3 = symbolsToIntCoord(s3)
-print(point1, point2, point3)
+#print(point1, point2, point3)
 
 counter = 0
 for i1 in range(1, 9):
@@ -57,7 +38,7 @@ for i1 in range(1, 9):
         if (isQueenJump(point1, p) or isRookJump(point2, p) or isKnightJump(point3,
                                                                             p)) and p != point1 and p != point2 and p != point3:
             counter += 1
-            print(p)
+            #print(p)
 with open('OUTPUT.TXT', 'w') as output:
     output.write(str(counter))
 
